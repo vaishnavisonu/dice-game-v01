@@ -1,0 +1,115 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-image: url("./img/dice.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f7d8a8;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+h1 {
+    margin-top: 0;
+    color: #333;
+    font-size: 48px;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.dice {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-color: #ffd700;
+    border: 3px solid #333;
+    border-radius: 15px;
+    font-size: 48px;
+    line-height: 100px;
+    margin: 20px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.roll {
+    animation: rollAnimation 1.5s ease-in-out forwards;
+}
+
+@keyframes rollAnimation {
+    0% { transform: rotateY(0deg); }
+    50% { transform: rotateY(360deg); }
+    100% { transform: rotateY(0deg); }
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#winnerMsg {
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 30px;
+    color: #333;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.winner-player1 {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.winner-player2 {
+    background-color: #f44336;
+    color: white;
+}
+
+@keyframes winnerAnimation {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+  /* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+    h1 {
+    font-size: 36px;
+    }
+    
+    .dice {
+    width: 80px;
+    height: 80px;
+    font-size: 36px;
+    line-height: 80px;
+    margin: 10px;
+    }
+
+    button {
+    padding: 10px 20px;
+    font-size: 16px;
+    }
+
+    #winnerMsg {
+    font-size: 24px;
+    }
+}
